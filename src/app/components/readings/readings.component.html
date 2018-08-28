@@ -1,3 +1,6 @@
 <h1>{{ name }}'s journal</h1>
 <hr>
 
+<ul class="list-group">
+  <li *ngFor="let reading of readings" class="list-group-item">{{ reading.bg }}, {{ reading.time }}, {{ reading.insulin}}</li>
+</ul>

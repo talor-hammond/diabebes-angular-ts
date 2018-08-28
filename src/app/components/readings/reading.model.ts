@@ -3,7 +3,7 @@ export class Reading {
     public time: String
     public insulin?: Number
 
-    constructor(bg: Number, time: String, insulin?: number) {
+    constructor(bg: Number, time: String, insulin?: Number) {
         this.bg = bg
         this.time = time
         this.insulin = insulin
