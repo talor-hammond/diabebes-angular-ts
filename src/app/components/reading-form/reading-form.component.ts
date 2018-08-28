@@ -1,7 +1,9 @@
 import { 
   Component, 
   OnInit 
-} from '@angular/core';
+} from '@angular/core'
+
+import { NgForm } from '@angular/forms'
 
 import { Reading } from '../home/readings/reading.model'
 
@@ -17,8 +19,11 @@ export class ReadingFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  onReadingAdded() {
-    console.log('testing)')
+  onReadingAdded(form: NgForm) {
+    const { bg, time, insulin, note } = form.value
+    const reading = new Reading(bg, time, insulin, note)
+
+    console.log(reading)
   }
 
 }
