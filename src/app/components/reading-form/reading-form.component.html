@@ -1,29 +1,29 @@
 <h3>New entry</h3>
-<form (ngSubmit)="">
+<form>
   <div class="row">
     <div class="col-sm-4">
       <label for="bg">Bg, mmol / L</label>
-      <input type="text" class="form-control">
+      <input type="text" name="bg" class="form-control">
     </div>
     <div class="col-sm-4">
       <label for="time">Time</label>
-      <input type="text" class="form-control">
+      <input type="text" name="time" class="form-control">
     </div>
     <div class="col-sm-4">
       <label for="insulin">Insulin (units)</label>
-      <input type="text" class="form-control">
+      <input type="text" name="insulin" class="form-control">
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12">
       <label for="note">Notes (optional)</label>
-      <input type="text" class="form-control">
+      <input type="text" name="note" class="form-control">
     </div>
   </div>
   <br>
   <div class="row">
     <div class="col-sm-12">
-      <button class="btn btn-danger" type="button">Submit</button>
+      <button class="btn btn-danger" type="submit">Submit</button>
     </div>
   </div>
 </form>
