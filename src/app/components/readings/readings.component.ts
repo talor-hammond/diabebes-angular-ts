@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadingsComponent implements OnInit {
   name: String
+  readings: []
 
   constructor() {
     this.name = 'Talor'
