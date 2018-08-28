@@ -12,7 +12,7 @@ export class ReadingsComponent implements OnInit {
   name: String
   // readings: Reading[] = [] // type: array of 'Reading' objects, defaulting to an empty array
   readings: Reading[] = [
-    new Reading(8, '8:30PM', 0)
+    new Reading(8, '8:30PM', 0, 'Nothing out of the ordinary; levels steady')
   ]
 
   constructor() {
