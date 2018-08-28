@@ -8,6 +8,7 @@ import { ReadingsComponent } from './components/readings/readings.component';
 import { HomeComponent } from './components/home/home.component';
 import { ReadingComponent } from './components/readings/reading/reading.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ReadingFormComponent } from './components/reading-form/reading-form.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ReadingsComponent,
     HomeComponent,
     ReadingComponent,
-    FooterComponent
+    FooterComponent,
+    ReadingFormComponent
   ],
   imports: [
     BrowserModule,
