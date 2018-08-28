@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+
+// Model(s)
+import { Reading } from './reading.model'
 
 @Component({
   selector: 'app-readings',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadingsComponent implements OnInit {
   name: String
-  readings: []
+  readings: Reading[] = [] // type: array of 'Reading' objects, defaulting to an empty array
 
   constructor() {
     this.name = 'Talor'
