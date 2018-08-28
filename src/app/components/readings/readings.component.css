@@ -1,0 +1,17 @@
+/* Readings */
+.reading-list-item {
+    margin: 0 10px;
+}
+
+/* TODO: Have this style a circle w bg-reading / units in centre */
+.bg-container { 
+    border-left: 1px solid rgba(210, 210, 210, 0.7);
+}
+
+.bg-reading {
+    font-size: 30px;
+}
+
+.bg-units {
+    font-size: 15px;
+}
