@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./readings.component.css']
 })
 export class ReadingsComponent implements OnInit {
+  name: String
 
-  constructor() { }
+  constructor() {
+    this.name = 'Talor'
+  }
 
   ngOnInit() {
   }
