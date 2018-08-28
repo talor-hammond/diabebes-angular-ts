@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { 
+  Component, 
+  OnInit 
+} from '@angular/core';
+
+import { Reading } from '../home/readings/reading.model'
 
 @Component({
   selector: 'app-reading-form',
@@ -10,6 +15,10 @@ export class ReadingFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onReadingAdded() {
+    console.log('testing)')
   }
 
 }
