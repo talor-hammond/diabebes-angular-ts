@@ -22,4 +22,10 @@ export class ReadingsComponent implements OnInit {
   ngOnInit() {
   }
 
+  onReadingAdded(reading: Reading) {
+    console.log('reading')
+
+    console.log(reading)
+  }
+
 }
