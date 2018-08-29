@@ -23,6 +23,8 @@ export class ReadingFormComponent implements OnInit {
   }
 
   onReadingAdded(form: NgForm) {
+    console.log(form)
+
     const { bg, time, insulin, note } = form.value
     const newReading = new Reading(bg, time, insulin, note)
 
