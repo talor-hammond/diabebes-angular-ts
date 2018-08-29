@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ReadingsComponent } from './components/home/readings/readings.component';
 import { HomeComponent } from './components/home/home.component';
-import { ReadingComponent } from './components/home/readings/reading/reading.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReadingFormComponent } from './components/reading-form/reading-form.component';
 
@@ -16,7 +15,6 @@ import { ReadingFormComponent } from './components/reading-form/reading-form.com
     HeaderComponent,
     ReadingsComponent,
     HomeComponent,
-    ReadingComponent,
     FooterComponent,
     ReadingFormComponent
   ],
