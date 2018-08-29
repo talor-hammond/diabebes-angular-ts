@@ -23,9 +23,13 @@ export class ReadingsComponent implements OnInit {
     this.readings.push(reading)
   }
 
-  getClassByBg() {
-    console.log('hello')
-    return 'list-group-item-danger'
+  getClassByBg(reading: number) {
+    switch (true) {
+      case reading < 4: // for hypoglycaemia
+        return 'list-group-item-warning'
+      case reading > 10: // for hyperglycaemia
+        return 'list-group-item-danger'
+    }
   }
 
 }
