@@ -5,7 +5,7 @@
 <hr>
 
 <ul class="list-group">
-    <li *ngFor="let reading of readings" href="#" class="list-group-item list-group-item-action row align-items-start reading-list-item">
+    <li *ngFor="let reading of readings" [ngClass]="getClassByBg(reading.bg)" class="list-group-item list-group-item-action row align-items-start reading-list-item">
         <div class="col-sm-2">          
           <h5>{{ reading.time }}</h5>
           <small class="text-muted">{{ reading.insulin }} units</small>

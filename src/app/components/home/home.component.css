@@ -1,14 +1,18 @@
 /* Home */
-.left {
-    border-right: 1px solid rgba(210, 210, 210, 0.5);
+
+/* .left {
+    border-right: 1px solid rgba(210, 210, 210, 0.5); TODO: Light-grey / gradient to go here
     min-height: 97vh;
 }
 
 .right {
     border-left: 1px solid rgba(210, 210, 210, 0.5);
     min-height: 97vh;
-}
+} */
 
 .middle {
-    margin-top: 80px;
+    padding-top: 80px;
+    min-height: 97vh;
+    border-left: 1px solid rgba(210, 210, 210, 0.5);
+    border-right: 1px solid rgba(210, 210, 210, 0.5);
 }

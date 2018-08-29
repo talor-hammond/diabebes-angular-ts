@@ -1,5 +1,5 @@
 <h3>New entry</h3>
-<form (ngSubmit)="onReadingAdded(f)" #f="ngForm">
+<form (ngSubmit)="onReadingAdded(readingForm); readingForm.reset()" #readingForm="ngForm"> <!-- Creating a template reference variable, readingForm -->
   <div class="row">
     <div class="col-sm-4">
       <label for="bg">Bg, mmol / L</label>
