@@ -21,4 +21,5 @@ Little web-app to track blood-glucose readings, notes and stuff made with Angula
 * use [ngClass] attribute-directive to dynamically return `list-item-group-${colour}` based on the bg reading
 * add new `Reading` objects into the readings array through the form; get it to reset on `(ngSubmit)`
 * compare latest and previous reading (nb: use index built in to `*ngFor*` directive), return trend / arrow dynamically
-* use a time-picker library for consistency in `readings.time`
+* use a time-picker library for consistency in `readings.time` 
+* routing w angular
