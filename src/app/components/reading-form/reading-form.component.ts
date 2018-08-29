@@ -1,6 +1,8 @@
 import { 
   Component, 
-  OnInit 
+  OnInit,
+  EventEmitter,
+  Output
 } from '@angular/core'
 
 import { NgForm } from '@angular/forms'
@@ -13,6 +15,7 @@ import { Reading } from '../home/readings/reading.model'
   styleUrls: ['./reading-form.component.css']
 })
 export class ReadingFormComponent implements OnInit {
+  @Output() readingAdded = new EventEmitter<Reading>()
 
   constructor() { }
 
@@ -21,9 +24,11 @@ export class ReadingFormComponent implements OnInit {
 
   onReadingAdded(form: NgForm) {
     const { bg, time, insulin, note } = form.value
-    const reading = new Reading(bg, time, insulin, note)
+    const newReading = new Reading(bg, time, insulin, note)
 
-    console.log(reading)
+    this.readingAdded.emit(newReading) // emitting the newReading as data
+
+    // TODO: clear form on submit
   }
 
 }
