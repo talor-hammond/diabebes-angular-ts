@@ -1,4 +1,4 @@
-# angular-ts
+# diabebes-angular-ts
 Repo I made to briefly [Max's Udemy Course on Angular 6 with TypeScript](https://www.udemy.com/the-complete-guide-to-angular-2)
 * Plan to follow through for the learning of best-practices & convention w Angular & ts
 
