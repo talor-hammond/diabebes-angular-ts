@@ -23,4 +23,9 @@ export class ReadingsComponent implements OnInit {
     this.readings.push(reading)
   }
 
+  getClassByBg() {
+    console.log('hello')
+    return 'list-group-item-danger'
+  }
+
 }
