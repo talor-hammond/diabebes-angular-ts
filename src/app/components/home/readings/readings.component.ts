@@ -29,6 +29,8 @@ export class ReadingsComponent implements OnInit {
         return 'list-group-item-warning'
       case reading > 10: // for hyperglycaemia
         return 'list-group-item-danger'
+      default:
+        return 'list-group-item-primary'
     }
   }
 
