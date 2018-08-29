@@ -1,10 +1,10 @@
 export class Reading {
-    public bg: Number
-    public time: String
-    public insulin?: Number
-    public note?: String
+    public bg: number
+    public time: string
+    public insulin?: number
+    public note?: string
 
-    constructor(bg: Number, time: String, insulin?: Number, note?: String) {
+    constructor(bg: number, time: string, insulin?: number, note?: string) {
         this.bg = bg
         this.time = time
         this.insulin = insulin

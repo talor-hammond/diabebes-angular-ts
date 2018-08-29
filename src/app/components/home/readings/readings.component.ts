@@ -10,7 +10,15 @@ import { Reading } from './reading.model'
 })
 export class ReadingsComponent implements OnInit {
   name: String
-  readings: Reading[] = [] // type: array of 'Reading' objects, defaulting to an empty array
+  // readings: Reading[] = [] // type: array of 'Reading' objects, defaulting to an empty array
+  readings: Reading[] = [
+    {
+      bg: 6.4,
+      time: '9:00AM',
+      insulin: 4,
+      note: '~30grams of carbs for breakfast'
+    }
+  ]
 
   constructor() {
     this.name = 'Talor'
