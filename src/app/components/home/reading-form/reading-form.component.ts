@@ -1,8 +1,6 @@
 import { 
   Component, 
   OnInit,
-  EventEmitter,
-  Output
 } from '@angular/core'
 
 import { NgForm } from '@angular/forms'
@@ -18,18 +16,16 @@ import { Reading } from '../readings/reading.model'
   styleUrls: ['./reading-form.component.css']
 })
 export class ReadingFormComponent implements OnInit {
-  @Output() readingAdded = new EventEmitter<Reading>()
-
   constructor(private readingsService: ReadingsService) { }
 
   ngOnInit() {
   }
 
-  onReadingAdded(form: NgForm) {
+  addReading(form: NgForm) {
     const { bg, time, insulin, note } = form.value
     const newReading = new Reading(bg, time, insulin, note)
 
-    this.readingAdded.emit(newReading) // emitting the newReading as data that gets passed into the event listener as an argument
+    this.readingsService.onReadingAdded(newReading) // calling the method within the readings service; much cleaner than the previous @Output() + new EE
   }
 
 }
