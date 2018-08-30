@@ -1,6 +1,7 @@
 import { 
   Component,
   OnInit,
+  OnChanges,
   Input
 } from '@angular/core';
 
@@ -11,14 +12,15 @@ import { Reading } from '../reading.model'
   templateUrl: './readings-summary.component.html',
   styleUrls: ['./readings-summary.component.css']
 })
-export class ReadingsSummaryComponent implements OnInit {
-  @Input() readings: Reading[] // making the array of readings available to our component's mark-up
+export class ReadingsSummaryComponent implements OnChanges {
+  @Input() readings: Reading[]
+
   glucoseReadings: number[] = []
   isOpen: boolean = false
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnChanges() {
     this.glucoseReadings = this.readings.map(reading => { // turning our array of objects into an array of reading.bg(s)
       return reading.bg
     })
