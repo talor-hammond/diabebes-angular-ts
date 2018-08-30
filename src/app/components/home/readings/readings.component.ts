@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 
+// Model(s)
+import { Reading } from './reading.model'
+
 // Services:
 import { ReadingsService } from './readings.service'
 
@@ -9,13 +12,13 @@ import { ReadingsService } from './readings.service'
   styleUrls: ['./readings.component.css']
 })
 export class ReadingsComponent implements OnInit {
-  name: string
+  name: string = 'Talor'
+  readings: Reading[]
 
-  constructor() {
-    this.name = 'Talor'
-  }
+  constructor(private readingsService: ReadingsService) { }
 
   ngOnInit() {
+    this.readings = this.readingsService.readings
   }
 
   // TODO: method to edit reading.note with new content:

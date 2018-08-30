@@ -7,6 +7,9 @@ import {
 
 import { NgForm } from '@angular/forms'
 
+// Services:
+import { ReadingsService } from '../readings/readings.service'
+
 import { Reading } from '../readings/reading.model'
 
 @Component({
@@ -17,7 +20,7 @@ import { Reading } from '../readings/reading.model'
 export class ReadingFormComponent implements OnInit {
   @Output() readingAdded = new EventEmitter<Reading>()
 
-  constructor() { }
+  constructor(private readingsService: ReadingsService) { }
 
   ngOnInit() {
   }
