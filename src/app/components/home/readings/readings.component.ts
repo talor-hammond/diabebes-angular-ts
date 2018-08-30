@@ -48,6 +48,8 @@ export class ReadingsComponent implements OnInit {
     this.readings.push(reading)
   }
 
+  // TODO: method to edit reading.note with new content:
+
   getClassByBg(reading: number) {
     switch (true) {
       case reading < 4: // for hypoglycaemia

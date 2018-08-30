@@ -7,7 +7,7 @@ import {
 
 import { NgForm } from '@angular/forms'
 
-import { Reading } from '../home/readings/reading.model'
+import { Reading } from '../readings/reading.model'
 
 @Component({
   selector: 'app-reading-form',
