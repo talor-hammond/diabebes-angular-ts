@@ -18,8 +18,11 @@ Little web-app to track blood-glucose readings, notes and stuff made with Angula
     * coming from using JSX which can get messy sometimes; especially with syntactical issues from ES6 & Babel <6 not co-operating sometimes
 
 ### To-do's / next-up
-* use [ngClass] attribute-directive to dynamically return `list-item-group-${colour}` based on the bg reading
-* add new `Reading` objects into the readings array through the form; get it to reset on `(ngSubmit)`
+* ~use [ngClass] attribute-directive to dynamically return `list-item-group-${colour}` based on the bg reading~
+* ~add new `Reading` objects into the readings array through the form; get it to reset on `(ngSubmit)`~
+* ~collapsible summary section~
+    * needs to receive data from `readings` component
+* ability to edit and add notes to readings; use index provided, edit property at [i]
 * compare latest and previous reading (nb: use index built in to `*ngFor*` directive), return trend / arrow dynamically
-* use a time-picker library for consistency in `readings.time` 
+* use a time-picker for consistency in `readings.time` 
 * routing w angular
