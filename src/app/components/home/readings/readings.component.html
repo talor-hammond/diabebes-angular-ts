@@ -19,3 +19,7 @@
         </div>
       </li>
 </ul>
+
+<hr>
+
+<app-readings-summary (showSummaryClicked)="toggleDropdown($event)"></app-readings-summary> <!-- listening for the showSummaryClicked event, and passing the value emitted to 'toggleDropdown()' -->
