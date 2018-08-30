@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./readings-summary.component.css']
 })
 export class ReadingsSummaryComponent implements OnInit {
+  isOpen: boolean = false
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleDropdown(isShown: boolean) {
+    console.log('lol')
   }
 
 }

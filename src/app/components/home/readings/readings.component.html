@@ -22,4 +22,4 @@
 
 <hr>
 
-<app-readings-summary></app-readings-summary>
+<app-readings-summary (showSummaryClicked)="toggleDropdown($event)"></app-readings-summary> <!-- listening for the showSummaryClicked event, and passing the value emitted to 'toggleDropdown()' -->

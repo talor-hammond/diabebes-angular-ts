@@ -12,7 +12,6 @@ import { ReadingFormComponent } from './components/home/reading-form/reading-for
 import { ReadingsSummaryComponent } from './components/home/readings/readings-summary/readings-summary.component';
 
 // Directives
-import { DropdownDirective } from './components/home/readings/readings-summary/dropdown.directive'
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { DropdownDirective } from './components/home/readings/readings-summary/d
     HomeComponent,
     FooterComponent,
     ReadingFormComponent,
-    ReadingsSummaryComponent,
-    DropdownDirective
+    ReadingsSummaryComponent
   ],
   imports: [
     BrowserModule,
