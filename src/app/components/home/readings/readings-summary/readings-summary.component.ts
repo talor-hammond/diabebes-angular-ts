@@ -37,19 +37,11 @@ export class ReadingsSummaryComponent implements OnInit {
   }
 
   getLows() {
-    let lows: number[]
-
-    lows = this.glucoseReadings.filter(reading => reading < 4)
-
-    return lows.length
+    return this.glucoseReadings.filter(reading => reading < 4).length // filter the readings below 4 into a new array, and return its length
   }
 
   getHighs() {
-    let highs: number[]
-
-    highs = this.glucoseReadings.filter(reading => reading > 10)
-
-    return highs.length
+    return this.glucoseReadings.filter(reading => reading > 10).length
   }
 
 }
