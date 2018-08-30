@@ -1,9 +1,10 @@
 import { 
   Component,
   OnInit,
-  OnChanges,
   Input
 } from '@angular/core';
+
+import { ReadingsService } from '../readings.service'
 
 import { Reading } from '../reading.model'
 
@@ -12,15 +13,17 @@ import { Reading } from '../reading.model'
   templateUrl: './readings-summary.component.html',
   styleUrls: ['./readings-summary.component.css']
 })
-export class ReadingsSummaryComponent implements OnChanges {
-  @Input() readings: Reading[]
+export class ReadingsSummaryComponent implements OnInit {
+  readings: Reading[]
 
   glucoseReadings: number[] = []
   isOpen: boolean = false
 
-  constructor() { }
+  constructor(private readingsService: ReadingsService) { }
 
-  ngOnChanges() {
+  ngOnInit() { // TODO: need to have this component watch for changes to the readings in ReadingsService
+    this.readings = this.readingsService.readings
+
     this.glucoseReadings = this.readings.map(reading => { // turning our array of objects into an array of reading.bg(s)
       return reading.bg
     })
