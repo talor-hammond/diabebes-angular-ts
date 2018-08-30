@@ -1,13 +1,11 @@
 <div id="accordion">
   <div class="card-header" id="headingOne">
-    <div class="show-pointer">
-      <h3 class="mb-0 show-pointer">
-        Show Summary <span class="caret caret-up"></span> <!-- span.drop-up needs to wrap & toggle on / off onClick -->
-      </h3>
-    </div>
+    <h3 class="show-pointer" summaryDropdown> <!-- event listener for 'click' which toggles isOpen -->
+      Show Summary <span class="caret caret-up"></span> <!-- span.drop-up needs to wrap & toggle on / off onClick -->
+    </h3>
   </div>
 
-  <div id="collapseOne" class="collapse show">
+  <div id="collapseOne" [ngClass]="isOpen ? 'collapse show' : 'collapse'"> <!-- issue, it doesn't have reference to isOpen variable -->
     <!-- .show needs to toggle on / off onClick -->
     <div class="card-body">
       <ul class="list-group list-group-flush">
