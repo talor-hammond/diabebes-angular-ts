@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { 
+  Component,
+  OnInit,
+  Input
+} from '@angular/core';
+
+import { Reading } from '../reading.model'
 
 @Component({
   selector: 'app-readings-summary',
@@ -6,11 +12,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./readings-summary.component.css']
 })
 export class ReadingsSummaryComponent implements OnInit {
+  @Input() readings: Reading[]
   isOpen: boolean = false
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.readings)
   }
 
 }
