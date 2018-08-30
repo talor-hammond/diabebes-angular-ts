@@ -13,6 +13,9 @@ import { ReadingsSummaryComponent } from './components/home/readings/readings-su
 
 // Directives
 
+// Services
+import { ReadingsService } from './components/home/readings/readings.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,7 @@ import { ReadingsSummaryComponent } from './components/home/readings/readings-su
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ReadingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

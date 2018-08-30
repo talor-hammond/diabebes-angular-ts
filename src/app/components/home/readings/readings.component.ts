@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 
+// Services:
+import { ReadingsService } from './readings.service'
+
 @Component({
   selector: 'app-readings',
   templateUrl: './readings.component.html',
