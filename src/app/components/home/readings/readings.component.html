@@ -22,4 +22,4 @@
 
 <hr>
 
-<app-readings-summary (showSummaryClicked)="toggleDropdown($event)"></app-readings-summary> <!-- listening for the showSummaryClicked event, and passing the value emitted to 'toggleDropdown()' -->
+<app-readings-summary [readings]="readings"></app-readings-summary> <!-- property binding; binding the 'readings' array of Reading objects from parent component-->
