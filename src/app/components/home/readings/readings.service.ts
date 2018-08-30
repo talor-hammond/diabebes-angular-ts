@@ -1,6 +1,9 @@
+import { Injectable } from '@angular/core'
+
 // Model(s)
 import { Reading } from './reading.model'
 
+@Injectable({providedIn: 'root'})
 export class ReadingsService {
   // readings: Reading[] = [] // type: array of 'Reading' objects, defaulting to an empty array
   readings: Reading[] = [

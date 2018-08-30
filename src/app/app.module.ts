@@ -30,7 +30,7 @@ import { ReadingsService } from './components/home/readings/readings.service'
     BrowserModule,
     FormsModule
   ],
-  providers: [ReadingsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
