@@ -9,7 +9,7 @@
   <div id="collapseOne" [ngClass]="isOpen ? 'collapse show' : 'collapse'"> <!-- .show needs to toggle on / off onClick -->
     <div class="card-body">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Average bg: x mmol / L</li>
+        <li class="list-group-item">Average bg: {{ getAverage() }} mmol / L</li>
         <li class="list-group-item">x low, y highs</li>
         <li class="list-group-item">Tend to drop low || high</li>
       </ul>
