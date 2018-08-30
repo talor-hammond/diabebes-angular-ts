@@ -22,13 +22,18 @@ export class ReadingsSummaryComponent implements OnInit {
   }
 
   getAverage() {
-    let bg: number[] = []
+    let glucoseReadings: number[] = []
+    let sum: number = 0
 
-    bg = this.readings.map(reading => {
+    glucoseReadings = this.readings.map(reading => { // turning our array of objects into an array of reading.bg(s)
       return reading.bg
     })
 
-    console.log(bg)
+    sum = Math.floor(glucoseReadings.reduce( (acc, curr) => { // reducing that array of glucoseReadings into a sum...
+      return acc + curr
+    }))
+
+    return sum / glucoseReadings.length // ...which we can divide through by the length of the array to find the average.
   }
 
 }
