@@ -1,7 +1,7 @@
 <div id="accordion">
   <div class="card-header" id="headingOne">
     <h3 class="show-pointer" (click)="isOpen = !isOpen"> <!-- event listener for 'click' which flips isOpen -->
-      Show Summary <span class="caret"></span> <!-- span.drop-up needs to wrap & toggle on / off onClick -->
+      {{ !isOpen ? 'Show' : 'Hide'}} Summary
     </h3>
   </div>
 

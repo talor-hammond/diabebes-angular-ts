@@ -13,8 +13,4 @@ export class ReadingsSummaryComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggleDropdown(isShown: boolean) {
-    console.log('lol')
-  }
-
 }
