@@ -22,6 +22,8 @@ export class ReadingsSummaryComponent implements OnInit {
     this.glucoseReadings = this.readings.map(reading => { // turning our array of objects into an array of reading.bg(s)
       return reading.bg
     })
+
+    this.getLows()
   }
 
   getAverage() {
@@ -35,9 +37,11 @@ export class ReadingsSummaryComponent implements OnInit {
   }
 
   getLows() {
-    // let lows: number[]
+    let lows: number[]
 
-    // lows = this.readin
+    lows = this.glucoseReadings.filter(reading => reading < 4)
+
+    return lows.length
   }
 
 }
