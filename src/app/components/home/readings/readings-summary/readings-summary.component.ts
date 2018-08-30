@@ -12,13 +12,23 @@ import { Reading } from '../reading.model'
   styleUrls: ['./readings-summary.component.css']
 })
 export class ReadingsSummaryComponent implements OnInit {
-  @Input() readings: Reading[]
+  @Input() readings: Reading[] // making the array of readings available to our component's mark-up
   isOpen: boolean = false
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.readings)
+    this.getAverage()
+  }
+
+  getAverage() {
+    let bg: number[] = []
+
+    bg = this.readings.map(reading => {
+      return reading.bg
+    })
+
+    console.log(bg)
   }
 
 }
