@@ -13,27 +13,31 @@ import { Reading } from '../reading.model'
 })
 export class ReadingsSummaryComponent implements OnInit {
   @Input() readings: Reading[] // making the array of readings available to our component's mark-up
+  glucoseReadings: number[] = []
   isOpen: boolean = false
 
   constructor() { }
 
   ngOnInit() {
-    this.getAverage()
+    this.glucoseReadings = this.readings.map(reading => { // turning our array of objects into an array of reading.bg(s)
+      return reading.bg
+    })
   }
 
   getAverage() {
-    let glucoseReadings: number[] = []
     let sum: number = 0
 
-    glucoseReadings = this.readings.map(reading => { // turning our array of objects into an array of reading.bg(s)
-      return reading.bg
-    })
-
-    sum = Math.floor(glucoseReadings.reduce( (acc, curr) => { // reducing that array of glucoseReadings into a sum...
+    sum = Math.floor(this.glucoseReadings.reduce( (acc, curr) => { // reducing that array of glucoseReadings into a sum...
       return acc + curr
     }))
 
-    return sum / glucoseReadings.length // ...which we can divide through by the length of the array to find the average.
+    return sum / this.glucoseReadings.length // ...which we can divide through by the length of the array to find the average.
+  }
+
+  getLows() {
+    // let lows: number[]
+
+    // lows = this.readin
   }
 
 }
