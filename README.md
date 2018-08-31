@@ -13,6 +13,7 @@ Little web-app to track blood-glucose readings, notes and stuff made with Angula
     * these are awesome -- gave me a way of letting components watch, or `.subscribe()` to events-emitted by the service
     * that way the data -- and changes to the data -- can be handled through the service, and logic to pull specific parts out can be handled through the component's class object
         * feels similar to the way redux works w `<Provider store={store}>` to manage application-state -- where with Angular, we have services being provided
+        
 Here's a snippet from my `readings.service.ts` file:
 ```typescript
 @Injectable({ providedIn: 'root' }) // configuring our service to 'wrap' / or provide to the entire app
