@@ -6,7 +6,7 @@ import {
 import { NgForm } from '@angular/forms'
 
 // Services:
-import { ReadingsService } from '../readings/readings.service'
+import { ReadingsService } from '../readings-service/readings.service'
 
 import { Reading } from '../readings/reading.model'
 

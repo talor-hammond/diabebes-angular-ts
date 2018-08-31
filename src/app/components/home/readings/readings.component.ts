@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core'
 import { Reading } from './reading.model'
 
 // Services:
-import { ReadingsService } from './readings.service'
+import { ReadingsService } from '../readings-service/readings.service'
 
 @Component({
   selector: 'app-readings',

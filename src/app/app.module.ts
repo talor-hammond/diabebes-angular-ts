@@ -14,7 +14,7 @@ import { ReadingsSummaryComponent } from './components/home/readings/readings-su
 // Directives
 
 // Services
-import { ReadingsService } from './components/home/readings/readings.service'
+import { ReadingsService } from './components/home/readings-service/readings.service'
 
 @NgModule({
   declarations: [
