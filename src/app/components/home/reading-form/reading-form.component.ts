@@ -16,7 +16,11 @@ import { Reading } from '../readings/reading.model'
   styleUrls: ['./reading-form.component.css']
 })
 export class ReadingFormComponent implements OnInit {
-  constructor(private readingsService: ReadingsService) { }
+  private readingsService: ReadingsService
+
+  constructor(readingsService: ReadingsService) { 
+    this.readingsService = readingsService
+  }
 
   ngOnInit() {
   }
