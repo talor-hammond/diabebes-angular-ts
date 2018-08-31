@@ -18,8 +18,7 @@ export class ReadingsComponent implements OnInit {
   constructor(private readingsService: ReadingsService) { }
 
   ngOnInit() {
-    this.readings = this.readingsService.readings
-    console.log(this.readings)
+    this.readings = this.readingsService.getReadings()
   }
 
   // TODO: method to edit reading.note with new content:
