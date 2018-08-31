@@ -4,14 +4,18 @@ Little web-app to track blood-glucose readings, notes and stuff made with Angula
 * Plan to use [this course](https://www.udemy.com/the-complete-guide-to-angular-2) for the learning of best-practices & convention w Angular & ts
 
 ### Initial thoughts
-* **angular-cli is awesome**
-    * `ng g c ${componentName}` is super-powerful: streamlines workflow, sets up test-suite, unique stylesheet
-    * planned all the initial components / model / features out and then ticked-through prefacing with the CLI
 * **TypeScript**
     * the OOP-approach feels really familiar (coming from Swift which is *heavily-typed* as well)
     * **Code Quality**
         * love how errors / issues are sprung in real-time -- as opposed to run-time
     * planned all the initial components / model / features out and then ticked-through prefacing with the CLI
+* **angular-cli is super-convenient**
+    * `ng g c ${componentName}` is powerful: streamlines workflow, sets up test-suite, unique stylesheet
+    * planned all the initial components / model / features out and then ticked-through prefacing with the CLI
+* **the role of services**
+    * these are awesome -- gave me a way of letting components watch, or `.subscribe()` to events-emitted by the service
+    * that way the data -- and changes to the data -- can be handled through the service, and logic to pull specific parts out can be handled through the component's class object
+        * feels similar to the way redux works w `<Provider store={store}>` to manage application-state -- where with Angular, we have services being provided
 * **really enjoy the way everything looks & feels *separated***
     * while the conventional-directory seems more complex than a simple react-app, everything feels nicely segregated into specific parts: components, testing, models, css split up
 * **dealing with natural-HTML is really refreshing**
