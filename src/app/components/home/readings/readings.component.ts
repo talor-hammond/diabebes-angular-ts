@@ -18,8 +18,14 @@ export class ReadingsComponent implements OnInit {
   constructor(private readingsService: ReadingsService) { }
 
   ngOnInit() {
-    this.readings = this.readingsService.readings
-    console.log(this.readings)
+    this.readings = this.readingsService.getReadings()
+
+    this.readingsService.readingsUpdated
+      .subscribe( // listen to the readingsUpdated event...
+        (readings: Reading[]) => {  // ...the event outputs the updated readings array
+          this.readings = readings  // ...which we can assign to this.readings on this component
+        }
+      )
   }
 
   // TODO: method to edit reading.note with new content:
