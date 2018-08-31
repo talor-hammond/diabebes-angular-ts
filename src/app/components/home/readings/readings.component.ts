@@ -19,6 +19,13 @@ export class ReadingsComponent implements OnInit {
 
   ngOnInit() {
     this.readings = this.readingsService.getReadings()
+
+    this.readingsService.readingsUpdated
+      .subscribe( // listen to the readingsUpdated event...
+        (readings: Reading[]) => {  // ...the event outputs the updated readings array
+          this.readings = readings  // ...which we can assign to this.readings on this component
+        }
+      )
   }
 
   // TODO: method to edit reading.note with new content:

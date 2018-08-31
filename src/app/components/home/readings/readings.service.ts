@@ -5,7 +5,6 @@ import { Reading } from './reading.model'
 
 @Injectable({ providedIn: 'root' }) // configuring our service to 'wrap' / or provide to the entire app
 export class ReadingsService {
-    //
     readingsUpdated = new EventEmitter<Reading[]>()
 
     private readings: Reading[] = [
@@ -35,12 +34,12 @@ export class ReadingsService {
     ]
 
     getReadings() {
-        return this.readings
+        return this.readings.slice() // simply returns a copy of the array; i.e. not the original value
     }
 
     onReadingAdded(reading: Reading) {
         this.readings.push(reading)
 
-        this.readingsUpdated.emit(this.readings) // outputting the new data as an event; lets components w the service subscribe to changes
+        this.readingsUpdated.emit(this.readings.slice()) // outputting the new data as an event; lets components w the service subscribe to changes
     }
 }
