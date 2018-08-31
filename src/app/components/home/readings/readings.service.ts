@@ -7,7 +7,7 @@ import { Reading } from './reading.model'
 export class ReadingsService {
     readingsUpdated = new EventEmitter<Reading[]>()
 
-    private readings: Reading[] = [
+    private readings: Reading[] = [ // template data for now
         {
             bg: 6.4,
             time: '9:00AM',
@@ -19,17 +19,6 @@ export class ReadingsService {
             time: '12:30PM',
             insulin: 2,
             note: '4 units / 30g could be too low'
-        },
-        {
-            bg: 8.1,
-            time: '2:30PM',
-            insulin: 7
-        },
-        {
-            bg: 3.1,
-            time: '5:00PM',
-            insulin: 0,
-            note: '25 grams of carbs to correct'
         }
     ]
 
@@ -38,7 +27,6 @@ export class ReadingsService {
     }
 
     onReadingAdded(reading: Reading) {
-        console.log(reading)
         this.readings.push(reading)
 
         this.readingsUpdated.emit(this.readings.slice()) // outputting the new data as an event; lets components w the service subscribe to changes
