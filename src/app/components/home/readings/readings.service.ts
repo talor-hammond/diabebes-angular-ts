@@ -38,6 +38,7 @@ export class ReadingsService {
     }
 
     onReadingAdded(reading: Reading) {
+        console.log(reading)
         this.readings.push(reading)
 
         this.readingsUpdated.emit(this.readings.slice()) // outputting the new data as an event; lets components w the service subscribe to changes

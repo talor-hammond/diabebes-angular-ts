@@ -23,7 +23,8 @@ export class ReadingFormComponent implements OnInit {
 
   addReading(form: NgForm) {
     const { bg, time, insulin, note } = form.value
-    const newReading = new Reading(bg, time, insulin, note)
+
+    const newReading = new Reading(Number(bg), time, insulin, note)
 
     this.readingsService.onReadingAdded(newReading) // calling the method within the readings service; much cleaner than the previous @Output() + new EE
   }

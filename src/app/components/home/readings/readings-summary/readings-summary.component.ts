@@ -15,15 +15,14 @@ import { Reading } from '../reading.model'
 })
 export class ReadingsSummaryComponent implements OnInit {
   readings: Reading[]
+  glucoseReadings: number[] = []
 
-  glucoseReadings: number[] = [] // let service handle these variables + methods below
   isOpen: boolean = false
 
   constructor(private readingsService: ReadingsService) { }
 
-  ngOnInit() { // TODO: need to have this component watch for changes to the readings in ReadingsService
+  ngOnInit() {
     this.readings = this.readingsService.getReadings()
-
     this.glucoseReadings = this.getGlucose(this.readings)
 
     this.readingsService.readingsUpdated
