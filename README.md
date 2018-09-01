@@ -102,9 +102,9 @@ export class ReadingsSummaryComponent implements OnInit {
 * ~collapsible summary section~
     * ~needs to receive data from `readings` component~
 * ~have `readings-summary.component.ts` watch for changes to readings data correctly~
-* ability to edit and add notes to readings; use index provided, edit property at [i]
+* ability to edit and add notes to readings
 * compare latest and previous reading (nb: use index built in to `*ngFor*` directive), return trend / arrow dynamically
 * use a time-picker for consistency in `readings.time` 
-* routing w angular
+* ~routing w angular~
 * data-persistence
     * probs need a back-end in combination w service
