@@ -16,7 +16,8 @@ import { ReadingsSummaryComponent } from './components/home/readings/readings-su
 // Directives
 
 // Services
-import { ReadingsService } from './components/home/readings-service/readings.service'
+import { ReadingsService } from './components/home/readings-service/readings.service';
+import { AboutComponent } from './about/about.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReadingsService } from './components/home/readings-service/readings.ser
     HomeComponent,
     FooterComponent,
     ReadingFormComponent,
-    ReadingsSummaryComponent
+    ReadingsSummaryComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
