@@ -11,7 +11,8 @@ import { AboutComponent } from '../components/about/about.component'
 
 const AppRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' }, // only re-direct if the full path is empty
-    { path: 'home', component: HomeComponent } // 'child' routes get appended relative to the parent
+    { path: 'home', component: HomeComponent }, // 'child' routes get appended relative to the parent, like w express.Router()
+    { path: 'about', component: AboutComponent }
 ]
 
 @NgModule({
