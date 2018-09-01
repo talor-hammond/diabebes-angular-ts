@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './routing/app-routing.module'
+
 // Components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -28,7 +30,8 @@ import { ReadingsService } from './components/home/readings-service/readings.ser
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
