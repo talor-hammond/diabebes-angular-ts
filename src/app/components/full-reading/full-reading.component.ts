@@ -14,11 +14,14 @@ export class FullReadingComponent implements OnInit {
   private readingsService: ReadingsService
 
   constructor(readingsService: ReadingsService, route: ActivatedRoute) { 
+    this.readingsService = readingsService
     this.route = route
   }
 
   ngOnInit() { 
-    const { index } = this.route.params.value
+    const index = Number(this.route.params.value.index)
+
+    this.readingsService.getReadingByIndex(index)
   }
 
 }
