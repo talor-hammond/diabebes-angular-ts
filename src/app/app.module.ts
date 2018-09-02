@@ -12,12 +12,13 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReadingFormComponent } from './components/home/reading-form/reading-form.component';
 import { ReadingsSummaryComponent } from './components/home/readings/readings-summary/readings-summary.component';
-import { AboutComponent } from './components/about/about.component'
+import { AboutComponent } from './components/about/about.component';
 
 // Directives
 
 // Services
 import { ReadingsService } from './components/home/readings-service/readings.service';
+import { FullReadingComponent } from './full-reading/full-reading.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ReadingsService } from './components/home/readings-service/readings.ser
     FooterComponent,
     ReadingFormComponent,
     ReadingsSummaryComponent,
-    AboutComponent
+    AboutComponent,
+    FullReadingComponent
   ],
   imports: [
     BrowserModule,
