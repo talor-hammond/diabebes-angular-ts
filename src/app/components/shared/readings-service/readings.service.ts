@@ -5,7 +5,7 @@ import { Reading } from '../readings/reading.model'
 
 @Injectable({ providedIn: 'root' }) // configuring our service to 'wrap' / or provide to the entire app
 export class ReadingsService {
-    readingsUpdated = new EventEmitter<Reading[]>()
+    readingsUpdated = new EventEmitter<Reading[]>() // allows us to output an array of Reading objects
 
     private readings: Reading[] = [ // template data for now
         {

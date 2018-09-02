@@ -1,3 +1,15 @@
+<h3>{{ reading.time }}</h3>
+
+<hr>
+
+<h4>Note:</h4>
 <p>
-  full-reading works!
+  {{ reading.note }}
 </p>
+
+<h4>
+  {{ reading.bg }}mmol / L,
+  <small class="text-muted">{{ reading.insulin }} units</small>
+</h4>
+
+<button routerLink="/home/readings" class="btn btn-primary">Back</button>
