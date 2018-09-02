@@ -33,6 +33,6 @@ export class ReadingsService {
     }
 
     getReadingByIndex(index: number) {
-        const reading = this.readings[index]
+        return this.readings[index]
     }
 }

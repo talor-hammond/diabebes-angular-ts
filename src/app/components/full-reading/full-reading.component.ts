@@ -3,14 +3,17 @@ import { ActivatedRoute } from '@angular/router';
 
 import { ReadingsService } from '../shared/readings-service/readings.service'
 
+import { Reading } from '../home/readings/reading.model'
+
 @Component({
   selector: 'app-full-reading',
   templateUrl: './full-reading.component.html',
   styleUrls: ['./full-reading.component.css']
 })
 export class FullReadingComponent implements OnInit {
-  // to get the index parameter, we need access to the ActivatedRoute obj
-  private route: ActivatedRoute 
+  reading: Reading
+
+  private route: ActivatedRoute // to get the index parameter, we need access to the ActivatedRoute obj
   private readingsService: ReadingsService
 
   constructor(readingsService: ReadingsService, route: ActivatedRoute) { 
@@ -21,7 +24,7 @@ export class FullReadingComponent implements OnInit {
   ngOnInit() { 
     const index = Number(this.route.params.value.index)
 
-    this.readingsService.getReadingByIndex(index)
+    this.reading = this.readingsService.getReadingByIndex(index)
   }
 
 }
