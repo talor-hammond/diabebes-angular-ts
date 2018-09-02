@@ -3,8 +3,7 @@
     
   </div>
   <div class="col-sm-6 middle">
-    <app-readings></app-readings>
-    <app-edit-modal></app-edit-modal>
+      <router-outlet></router-outlet> <!-- renders either list of readings, or a single-reading based on relative child route picked; 'nested' routes -->
   </div>
   <div class="col-sm-3 right">
     
