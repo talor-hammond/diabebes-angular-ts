@@ -35,4 +35,10 @@ export class ReadingsService {
     getReadingByIndex(index: number) {
         return this.readings[index]
     }
+
+    editReadingNoteByIndex(index: number, content: string) {
+        this.readings[index].note = content
+
+        this.readingsUpdated.emit(this.readings.slice())
+    }
 }
