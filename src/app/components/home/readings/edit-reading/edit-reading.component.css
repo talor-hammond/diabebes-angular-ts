@@ -5,7 +5,7 @@
     bottom: 0;
     left: 0;
     z-index: 1050;
-    display: none;
+    /* display: none; */
     /* overflow: hidden; */
     outline: 0;
     background-color: rgba(0, 0, 0, 0.30);
@@ -44,6 +44,6 @@
 
 /* Add Animation */
 @keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
+    from {opacity: 0}
+    to {opacity: 1}
 }

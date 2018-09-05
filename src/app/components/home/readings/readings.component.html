@@ -18,6 +18,9 @@
       <a routerLink="{{ i }}"><span class="bg-reading text-center">{{ reading.bg }}</span><span class="bg-units"> mmol/L</span></a>
     </div>
 
+    <div *ngIf="modalOpen">
+      <app-edit-reading></app-edit-reading>
+    </div>
     <!--
        Edit-modal:
           - toggle 'display: none;' when [ Edit ] button is clicked; look at isHidden || conditionally-render the component (think this way better)
@@ -27,7 +30,6 @@
   </li>
 </ul>
 
-<app-edit-reading></app-edit-reading>
 <hr>
 
 <app-readings-summary></app-readings-summary> <!-- prev: property binding; binding the 'readings' array of Reading objects from parent component-->
