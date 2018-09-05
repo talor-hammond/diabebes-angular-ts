@@ -16,7 +16,7 @@ import { EditModalService } from '../../shared/edit-modal-service/edit-modal.ser
 export class ReadingsComponent implements OnInit {
   name: string = 'Talor'
   readings: Reading[]
-  modalOpen: boolean = false
+  modalOpen: boolean
 
   constructor(
     private readingsService: ReadingsService,
@@ -39,6 +39,10 @@ export class ReadingsComponent implements OnInit {
           this.modalOpen = modalOpen
         }
       )
+  }
+
+  toggleModal() {
+    this.editModalService.togglingModal()
   }
 
   getClassByBg(reading: number) {

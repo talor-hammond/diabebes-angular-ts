@@ -6,7 +6,7 @@ export class EditModalService {
     modalToggled = new EventEmitter<boolean>()
 
 
-  toggleModal() {
+  togglingModal() {
     this.modalOpen = !this.modalOpen
 
     this.modalToggled.emit(this.modalOpen)
