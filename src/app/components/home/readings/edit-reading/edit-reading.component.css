@@ -12,21 +12,18 @@
 }
 
 /* Modal Header */
-/* .modal-header {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-} */
+.modal-header, .modal-footer, .modal-body {
+    padding: 10px 16px;
+    color: black;
+}
 
-/* Modal Body */
-/* .modal-body {padding: 2px 16px;} */
+.edit-input {
+    width: 100%;   
+}
 
-/* Modal Footer */
-/* .modal-footer {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-} */
+.thin {
+    font-weight: 400 !important;
+}
 
 /* Modal Content */
 .modal-content {

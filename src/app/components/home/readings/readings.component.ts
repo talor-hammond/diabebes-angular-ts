@@ -40,8 +40,4 @@ export class ReadingsComponent implements OnInit {
     }
   }
 
-  toggleModal() {
-    this.modalOpen = !this.modalOpen
-  }
-
 }
