@@ -4,7 +4,7 @@ import {
   Input
 } from '@angular/core';
 
-import { ReadingsService } from '../../readings-service/readings.service'
+import { ReadingsService } from '../../../shared/readings-service/readings.service'
 
 import { Reading } from '../reading.model'
 
