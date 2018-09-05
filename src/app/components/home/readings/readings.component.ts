@@ -5,6 +5,8 @@ import { Reading } from './reading.model'
 
 // Services:
 import { ReadingsService } from '../../shared/readings-service/readings.service'
+import { EditModalService } from '../../shared/edit-modal-service/edit-modal.service'
+
 
 @Component({
   selector: 'app-readings',
@@ -16,7 +18,10 @@ export class ReadingsComponent implements OnInit {
   readings: Reading[]
   modalOpen: boolean = false
 
-  constructor(private readingsService: ReadingsService) { }
+  constructor(
+    private readingsService: ReadingsService,
+    private editModalService: EditModalService
+  ) { }
 
   ngOnInit() {
     this.readings = this.readingsService.getReadings()
@@ -25,6 +30,13 @@ export class ReadingsComponent implements OnInit {
       .subscribe( // listen to the readingsUpdated event...
         (readings: Reading[]) => {  // ...the event outputs the updated readings array
           this.readings = readings  // ...which we can assign to this.readings on this component
+        }
+      )
+
+    this.editModalService.modalToggled
+      .subscribe(
+        (modalOpen: boolean) => {
+          this.modalOpen = modalOpen
         }
       )
   }

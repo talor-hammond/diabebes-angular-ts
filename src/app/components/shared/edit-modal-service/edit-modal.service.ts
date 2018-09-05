@@ -8,5 +8,7 @@ export class EditModalService {
 
   toggleModal() {
     this.modalOpen = !this.modalOpen
+
+    this.modalToggled.emit(this.modalOpen)
   }
 }
