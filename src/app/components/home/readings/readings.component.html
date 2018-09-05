@@ -11,13 +11,20 @@
       <small class="text-muted">{{ reading.insulin }} units</small>
     </div>
     <div class="col-sm-8">
-      <span class="title">Note:</span><small routerLink="" class="text-muted edit-button">[ Edit ]</small>
+      <span class="title">Note:</span><small routerLink="" class="text-muted edit-button" (click)="toggleModal()">[ Edit ]</small>
       <p class="bg-note">{{ reading.note }}</p>
     </div>
-
     <div class="col-sm-2 bg-container">
       <a routerLink="{{ i }}"><span class="bg-reading text-center">{{ reading.bg }}</span><span class="bg-units"> mmol/L</span></a>
     </div>
+
+    <!--
+       Edit-modal:
+          - toggle 'display: none;' when [ Edit ] button is clicked; look at isHidden || conditionally-render the component (think this way better)
+              - that way each instance will have a relative index
+          - each iteration will have its own relative modal component -- todo: need to pass this component the index so the edit method can be called through the service
+    -->
+    <app-edit-reading></app-edit-reading>
   </li>
 </ul>
 

@@ -14,6 +14,7 @@ import { ReadingsService } from '../../shared/readings-service/readings.service'
 export class ReadingsComponent implements OnInit {
   name: string = 'Talor'
   readings: Reading[]
+  modalOpen: boolean = false
 
   constructor(private readingsService: ReadingsService) { }
 
@@ -28,8 +29,6 @@ export class ReadingsComponent implements OnInit {
       )
   }
 
-  // TODO: method to edit reading.note with new content:
-
   getClassByBg(reading: number) {
     switch (true) {
       case reading < 4: // for hypoglycaemia
@@ -39,6 +38,10 @@ export class ReadingsComponent implements OnInit {
       default:
         return 'list-group-item-primary'
     }
+  }
+
+  toggleModal() {
+    this.modalOpen = !this.modalOpen
   }
 
 }
