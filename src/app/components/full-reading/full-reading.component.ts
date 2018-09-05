@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { ReadingsService } from '../services/readings-service/readings.service'
+import { ReadingsService } from '../_services/readings-service/readings.service'
 
 import { Reading } from '../home/readings/reading.model'
 

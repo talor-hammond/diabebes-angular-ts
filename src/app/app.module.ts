@@ -16,9 +16,10 @@ import { AboutComponent } from './components/about/about.component';
 import { FullReadingComponent } from './components/full-reading/full-reading.component';
 
 // Directives
+import { ModalDirective } from './components/_directives/modal.directive';
 
 // Services
-import { ReadingsService } from './components/services/readings-service/readings.service';
+import { ReadingsService } from './components/_services/readings-service/readings.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ReadingsService } from './components/services/readings-service/readings
     ReadingFormComponent,
     ReadingsSummaryComponent,
     AboutComponent,
-    FullReadingComponent
+    FullReadingComponent,
+    ModalDirective
   ],
   imports: [
     BrowserModule,

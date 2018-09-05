@@ -12,7 +12,9 @@
         </div>
         <div class="col-sm-8">
           <h5>Note:</h5>
-          <p class="bg-note">{{ reading.note }}</p>
+          <div class="bg-note">
+            <p>{{ reading.note }}</p>
+          </div>
         </div>
         <div class="col-sm-2 bg-container">
           <a routerLink="{{ i }}"><span class="bg-reading text-center">{{ reading.bg }}</span><span class="bg-units"> mmol/L</span></a>
