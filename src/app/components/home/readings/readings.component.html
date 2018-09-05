@@ -11,7 +11,7 @@
       <small class="text-muted">{{ reading.insulin }} units</small>
     </div>
     <div class="col-sm-8">
-      <span class="title">Note:</span><small routerLink="" class="text-muted edit-button" (click)="toggleModal()">[ Edit ]</small>
+      <span class="title">Note:</span><small class="text-muted edit-button" (click)="toggleModal()">[ Edit ]</small>
       <p class="bg-note">{{ reading.note }}</p>
     </div>
     <div class="col-sm-2 bg-container">
@@ -24,10 +24,10 @@
               - that way each instance will have a relative index
           - each iteration will have its own relative modal component -- todo: need to pass this component the index so the edit method can be called through the service
     -->
-    <app-edit-reading></app-edit-reading>
   </li>
 </ul>
 
+<app-edit-reading></app-edit-reading>
 <hr>
 
 <app-readings-summary></app-readings-summary> <!-- prev: property binding; binding the 'readings' array of Reading objects from parent component-->
