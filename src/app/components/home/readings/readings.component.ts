@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core'
 import { Reading } from './reading.model'
 
 // Services:
-import { ReadingsService } from '../readings-service/readings.service'
+import { ReadingsService } from '../../services/readings-service/readings.service'
 
 @Component({
   selector: 'app-readings',
@@ -27,8 +27,6 @@ export class ReadingsComponent implements OnInit {
         }
       )
   }
-
-  // TODO: method to edit reading.note with new content:
 
   getClassByBg(reading: number) {
     switch (true) {

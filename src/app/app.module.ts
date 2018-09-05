@@ -18,7 +18,7 @@ import { FullReadingComponent } from './components/full-reading/full-reading.com
 // Directives
 
 // Services
-import { ReadingsService } from './components/home/readings-service/readings.service';
+import { ReadingsService } from './components/services/readings-service/readings.service';
 
 @NgModule({
   declarations: [
