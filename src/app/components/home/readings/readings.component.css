@@ -19,3 +19,11 @@
 .bg-units {
     font-size: 15px;
 }
+
+.title { 
+    font-size: 20px;
+}
+
+.edit-button {
+    float: right;
+}

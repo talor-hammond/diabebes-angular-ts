@@ -5,19 +5,20 @@
 <hr>
 
 <ul class="list-group">
-    <li *ngFor="let reading of readings; let i = index" [ngClass]="getClassByBg(reading.bg)" class="list-group-item list-group-item-action row align-items-start reading-list-item">
-        <div class="col-sm-2">          
-          <h5>{{ reading.time }}</h5>
-          <small class="text-muted">{{ reading.insulin }} units</small>
-        </div>
-        <div class="col-sm-8">
-          <h5>Note:</h5>
-          <p class="bg-note">{{ reading.note }}</p>
-        </div>
-        <div class="col-sm-2 bg-container">
-          <a routerLink="{{ i }}"><span class="bg-reading text-center">{{ reading.bg }}</span><span class="bg-units"> mmol/L</span></a>
-        </div>
-      </li>
+  <li *ngFor="let reading of readings; let i = index" [ngClass]="getClassByBg(reading.bg)" class="list-group-item list-group-item-action row align-items-start reading-list-item">
+    <div class="col-sm-2">
+      <h5>{{ reading.time }}</h5>
+      <small class="text-muted">{{ reading.insulin }} units</small>
+    </div>
+    <div class="col-sm-8">
+      <span class="title">Note:</span><small class="text-muted edit-button">[ Edit ]</small>
+      <p class="bg-note">{{ reading.note }}</p>
+    </div>
+
+    <div class="col-sm-2 bg-container">
+      <a routerLink="{{ i }}"><span class="bg-reading text-center">{{ reading.bg }}</span><span class="bg-units"> mmol/L</span></a>
+    </div>
+  </li>
 </ul>
 
 <hr>
