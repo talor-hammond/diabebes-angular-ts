@@ -42,8 +42,6 @@ export class ReadingsComponent implements OnInit {
   }
 
   activateModal(index: number) {
-    console.log('firing')
-
     const modal = {
       index
     }
