@@ -15,6 +15,7 @@ export class ReadingsComponent implements OnInit {
   name: string = 'Talor'
   readings: Reading[]
   modalOpen: boolean = false
+  activeModal: {} = null // populate this through subscription to the edit-modal service
 
   constructor(private readingsService: ReadingsService) { }
 
@@ -40,8 +41,14 @@ export class ReadingsComponent implements OnInit {
     }
   }
 
-  toggleModal() {
-    this.modalOpen = !this.modalOpen
+  activateModal(index: number) {
+    console.log('firing')
+
+    const modal = {
+      index
+    }
+
+    console.log(modal)
   }
 
 }

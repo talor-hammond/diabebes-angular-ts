@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-edit-reading',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-reading.component.css']
 })
 export class EditReadingComponent implements OnInit {
+  @Input() index: number
 
   constructor() { }
 
   ngOnInit() {
+    console.log('modal open with index: ', this.index)
   }
 
 }

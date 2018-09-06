@@ -11,16 +11,14 @@
       <small class="text-muted">{{ reading.insulin }} units</small>
     </div>
     <div class="col-sm-8">
-      <span class="title">Note:</span><small class="text-muted edit-button" (click)="toggleModal()">[ Edit ]</small>
+      <span class="title">Note:</span><small class="text-muted edit-button" (click)="activateModal(i)">[ Edit ]</small>
       <p class="bg-note">{{ reading.note }}</p>
     </div>
     <div class="col-sm-2 bg-container">
       <a routerLink="{{ i }}"><span class="bg-reading text-center">{{ reading.bg }}</span><span class="bg-units"> mmol/L</span></a>
     </div>
 
-    <div *ngIf="modalOpen">
-      <app-edit-reading></app-edit-reading>
-    </div>
+    <app-edit-reading *ngIf="modalOpen" [index]="i"></app-edit-reading>
     <!--
        Edit-modal:
           - toggle 'display: none;' when [ Edit ] button is clicked; look at isHidden || conditionally-render the component (think this way better)
