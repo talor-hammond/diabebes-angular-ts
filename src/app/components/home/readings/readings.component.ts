@@ -5,6 +5,7 @@ import { Reading } from './reading.model'
 
 // Services:
 import { ReadingsService } from '../../shared/readings-service/readings.service'
+import { EditModalService, Modal } from '../../shared/edit-modal-service/edit-modal.service'
 
 @Component({
   selector: 'app-readings',
@@ -14,8 +15,15 @@ import { ReadingsService } from '../../shared/readings-service/readings.service'
 export class ReadingsComponent implements OnInit {
   name: string = 'Talor'
   readings: Reading[]
+  activeModal: Modal = {
+    index: null,
+    isActive: false
+  } // populate this through subscription to the edit-modal service
 
-  constructor(private readingsService: ReadingsService) { }
+  constructor(
+    private readingsService: ReadingsService,
+    private editModalService: EditModalService
+  ) { }
 
   ngOnInit() {
     this.readings = this.readingsService.getReadings()
@@ -26,9 +34,15 @@ export class ReadingsComponent implements OnInit {
           this.readings = readings  // ...which we can assign to this.readings on this component
         }
       )
-  }
 
-  // TODO: method to edit reading.note with new content:
+    this.editModalService.activeModalUpdated
+      .subscribe(
+        (activeModal: Modal) => {
+          console.log('Changing to the active modal: ', activeModal)
+          this.activeModal = activeModal
+        }
+      )
+  }
 
   getClassByBg(reading: number) {
     switch (true) {
@@ -39,6 +53,19 @@ export class ReadingsComponent implements OnInit {
       default:
         return 'list-group-item-primary'
     }
+  }
+
+  checkModal(index: number) {
+    return this.editModalService.checkIfActive(index)
+  }
+
+  activateModal(index: number) {
+    const modal = {
+      index,
+      isActive: true
+    }
+
+    this.editModalService.activateModal(modal)
   }
 
 }

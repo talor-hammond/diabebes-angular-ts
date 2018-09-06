@@ -14,6 +14,7 @@ import { ReadingFormComponent } from './components/home/reading-form/reading-for
 import { ReadingsSummaryComponent } from './components/home/readings/readings-summary/readings-summary.component';
 import { AboutComponent } from './components/about/about.component';
 import { FullReadingComponent } from './components/full-reading/full-reading.component';
+import { EditReadingComponent } from './components/home/readings/edit-reading/edit-reading.component';
 
 // Directives
 
@@ -29,7 +30,8 @@ import { FullReadingComponent } from './components/full-reading/full-reading.com
     ReadingFormComponent,
     ReadingsSummaryComponent,
     AboutComponent,
-    FullReadingComponent
+    FullReadingComponent,
+    EditReadingComponent
   ],
   imports: [
     BrowserModule,

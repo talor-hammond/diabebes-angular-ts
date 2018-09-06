@@ -5,19 +5,27 @@
 <hr>
 
 <ul class="list-group">
-    <li *ngFor="let reading of readings; let i = index" [ngClass]="getClassByBg(reading.bg)" class="list-group-item list-group-item-action row align-items-start reading-list-item">
-        <div class="col-sm-2">          
-          <h5>{{ reading.time }}</h5>
-          <small class="text-muted">{{ reading.insulin }} units</small>
-        </div>
-        <div class="col-sm-8">
-          <h5>Note:</h5>
-          <p class="bg-note">{{ reading.note }}</p>
-        </div>
-        <div class="col-sm-2 bg-container">
-          <a routerLink="{{ i }}"><span class="bg-reading text-center">{{ reading.bg }}</span><span class="bg-units"> mmol/L</span></a>
-        </div>
-      </li>
+  <li *ngFor="let reading of readings; let i = index" [ngClass]="getClassByBg(reading.bg)" class="list-group-item list-group-item-action row align-items-start reading-list-item">
+    <div class="col-sm-2">
+      <h5>{{ reading.time }}</h5>
+      <small class="text-muted">{{ reading.insulin }} units</small>
+    </div>
+    <div class="col-sm-8">
+      <span class="title">Note:</span><small class="text-muted edit-button" (click)="activateModal(i)">[ Edit ]</small>
+      <p class="bg-note">{{ reading.note }}</p>
+    </div>
+    <div class="col-sm-2 bg-container">
+      <a routerLink="{{ i }}"><span class="bg-reading text-center">{{ reading.bg }}</span><span class="bg-units"> mmol/L</span></a>
+    </div>
+
+    <app-edit-reading *ngIf="checkModal(i)" [index]="i"></app-edit-reading>
+    <!--
+       Edit-modal:
+          - toggle 'display: none;' when [ Edit ] button is clicked; look at isHidden || conditionally-render the component (think this way better)
+              - that way each instance will have a relative index
+          - each iteration will have its own relative modal component -- todo: need to pass this component the index so the edit method can be called through the service
+    -->
+  </li>
 </ul>
 
 <hr>

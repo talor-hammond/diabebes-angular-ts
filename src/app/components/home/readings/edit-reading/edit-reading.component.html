@@ -1,0 +1,17 @@
+<div class="custom-modal">
+  <div class="modal-content">
+
+    <div class="modal-body">
+      <div class="form-group">
+        <label>Edit note</label>
+        <input type="text" [(ngModel)]="note" class="form-control">
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" (click)="editNote(note)" class="btn btn-primary">Save changes</button>
+      <button type="button" (click)="closeModal()" class="btn btn-secondary">Close</button>
+    </div>
+
+  </div>
+</div>

@@ -16,6 +16,11 @@
     font-size: 30px;
 }
 
-.bg-units {
+.bg-units, .title {
     font-size: 15px;
+}
+
+.edit-button {
+    float: right;
+    cursor: pointer;
 }

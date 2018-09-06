@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core'
 
 // Model(s)
-import { Reading } from '../readings/reading.model'
+import { Reading } from '../../home/readings/reading.model'
 
 @Injectable({ providedIn: 'root' }) // configuring our service to 'wrap' / or provide to the entire app
 export class ReadingsService {
@@ -34,5 +34,11 @@ export class ReadingsService {
 
     getReadingByIndex(index: number) {
         return this.readings[index]
+    }
+
+    editNoteByIndex(note: string, index: number) {
+        this.readings[index].note = note
+        
+        this.readingsUpdated.emit(this.readings.slice())
     }
 }
