@@ -5,7 +5,7 @@ import { Reading } from './reading.model'
 
 // Services:
 import { ReadingsService } from '../../shared/readings-service/readings.service'
-import { EditModalService } from '../../shared/edit-modal-service/edit-modal.service'
+import { EditModalService, Modal } from '../../shared/edit-modal-service/edit-modal.service'
 
 @Component({
   selector: 'app-readings',
@@ -15,8 +15,10 @@ import { EditModalService } from '../../shared/edit-modal-service/edit-modal.ser
 export class ReadingsComponent implements OnInit {
   name: string = 'Talor'
   readings: Reading[]
-  modalOpen: boolean = false
-  activeModal: {} = null // populate this through subscription to the edit-modal service
+  activeModal: Modal = {
+    index: null,
+    isActive: false
+  } // populate this through subscription to the edit-modal service
 
   constructor(
     private readingsService: ReadingsService,
@@ -35,7 +37,7 @@ export class ReadingsComponent implements OnInit {
 
     this.editModalService.activeModalUpdated
       .subscribe(
-        (activeModal: {index: number}) => {
+        (activeModal: Modal) => {
           console.log('Changing to the active modal: ', activeModal)
           this.activeModal = activeModal
         }
@@ -53,9 +55,14 @@ export class ReadingsComponent implements OnInit {
     }
   }
 
+  checkModal(index: number) {
+    return this.editModalService.checkIfActive(index)
+  }
+
   activateModal(index: number) {
     const modal = {
-      index
+      index,
+      isActive: true
     }
 
     this.editModalService.activateModal(modal)

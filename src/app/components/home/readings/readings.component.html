@@ -18,7 +18,7 @@
       <a routerLink="{{ i }}"><span class="bg-reading text-center">{{ reading.bg }}</span><span class="bg-units"> mmol/L</span></a>
     </div>
 
-    <app-edit-reading *ngIf="modalOpen" [index]="i"></app-edit-reading>
+    <app-edit-reading *ngIf="checkModal(i)" [index]="i"></app-edit-reading>
     <!--
        Edit-modal:
           - toggle 'display: none;' when [ Edit ] button is clicked; look at isHidden || conditionally-render the component (think this way better)
