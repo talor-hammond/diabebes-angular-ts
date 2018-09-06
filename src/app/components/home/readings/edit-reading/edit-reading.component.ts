@@ -22,7 +22,9 @@ export class EditReadingComponent implements OnInit {
   }
 
   editNote(note: string) {
-    
+    this.readingsService.editNoteByIndex(note, this.index)
+
+    this.closeModal()
   }
 
   closeModal() {
