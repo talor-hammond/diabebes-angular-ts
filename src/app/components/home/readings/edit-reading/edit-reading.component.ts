@@ -8,12 +8,16 @@ import { EditModalService } from '../../../shared/edit-modal-service/edit-modal.
   styleUrls: ['./edit-reading.component.css']
 })
 export class EditReadingComponent implements OnInit {
-  @Input() index: number
+  @Input() index: number // pass this property to edit-reading method
 
   constructor(private editModalService: EditModalService) { }
 
   ngOnInit() {
-    console.log('modal open with index: ', this.index)
+  
+  }
+
+  editNote(note: string) {
+    this.
   }
 
   closeModal() {

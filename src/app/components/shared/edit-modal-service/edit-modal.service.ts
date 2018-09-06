@@ -15,7 +15,6 @@ export class EditModalService {
     activeModalUpdated = new EventEmitter<Modal>()
 
     activateModal(modal: Modal) {
-        console.log('service firing with modal: ', modal)
         this.activeModal = modal
 
         this.activeModalUpdated.emit(this.activeModal)
