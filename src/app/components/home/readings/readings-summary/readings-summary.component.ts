@@ -6,7 +6,7 @@ import {
 
 import { ReadingsService } from '../../../shared/readings-service/readings.service'
 
-import { Reading } from '../reading.model'
+import { Reading } from '../../../shared/reading.model'
 
 @Component({
   selector: 'app-readings-summary',

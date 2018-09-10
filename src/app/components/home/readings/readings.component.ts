@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 
 // Model(s)
-import { Reading } from './reading.model'
+import { Reading } from '../../shared/reading.model'
 
 // Services:
 import { ReadingsService } from '../../shared/readings-service/readings.service'

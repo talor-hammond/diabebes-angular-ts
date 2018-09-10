@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core'
 
 // Model(s)
-import { Reading } from '../../home/readings/reading.model'
+import { Reading } from '../reading.model'
 
 @Injectable({ providedIn: 'root' }) // configuring our service to 'wrap' / or provide to the entire app
 export class ReadingsService {

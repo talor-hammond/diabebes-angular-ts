@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms'
 // Services:
 import { ReadingsService } from '../../shared/readings-service/readings.service'
 
-import { Reading } from '../readings/reading.model'
+import { Reading } from '../../shared/reading.model'
 
 @Component({
   selector: 'app-reading-form',

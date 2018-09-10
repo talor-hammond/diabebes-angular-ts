@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { ReadingsService } from '../shared/readings-service/readings.service'
 
-import { Reading } from '../home/readings/reading.model'
+import { Reading } from '../shared/reading.model'
 
 @Component({
   selector: 'app-full-reading',

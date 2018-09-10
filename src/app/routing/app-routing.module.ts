@@ -2,13 +2,12 @@ import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
 // Default
-import { FooterComponent } from '../components/footer/footer.component'
-import { HeaderComponent } from '../components/header/header.component'
+// import { FooterComponent } from '../components/footer/footer.component'
+// import { HeaderComponent } from '../components/header/header.component'
 // Home / readings
 import { HomeComponent } from '../components/home/home.component'
 import { ReadingsComponent } from '../components/home/readings/readings.component'
 import { FullReadingComponent } from '../components/full-reading/full-reading.component'
-import { EditReadingComponent } from '../components/home/readings/edit-reading/edit-reading.component'
 // About
 import { AboutComponent } from '../components/about/about.component'
 
