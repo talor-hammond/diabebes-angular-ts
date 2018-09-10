@@ -1,10 +1,14 @@
 <h3>New entry</h3>
 <form (ngSubmit)="addReading(readingForm); readingForm.reset()" #readingForm="ngForm">
-  <!-- Creating a template reference variable, readingForm -->
+  <!-- 
+    - Creating a template reference variable, readingForm 
+    - 'Template-driven' approach
+  -->
   <div class="row">
     <div class="col-sm-4">
       <label for="bg">Bg, mmol / L</label>
-      <input type="text" name="bg" class="form-control" ngModel>
+      <input type="text" name="bg" class="form-control" ngModel> 
+      <!-- 'ngModel': directive made available by the formsModule -- tells ng that this input should be part of the JavaScript object representation of this form -->
     </div>
     <div class="col-sm-4">
       <label for="time">Time</label>
