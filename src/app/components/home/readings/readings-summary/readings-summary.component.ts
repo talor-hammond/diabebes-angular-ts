@@ -46,7 +46,7 @@ export class ReadingsSummaryComponent implements OnInit {
   getAverage() {
     let sum: number = Math.floor(this.glucoseReadings.reduce((acc, curr) => acc + curr)) // reducing that array of glucoseReadings into a sum...
 
-    return sum / this.glucoseReadings.length // ...which we can divide through by the length of the array to find the average.
+    return (sum / this.glucoseReadings.length).toFixed(2) // ...which we can divide through by the length of the array to find the average.
   }
 
   getLows() {

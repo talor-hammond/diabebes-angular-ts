@@ -6,12 +6,11 @@
     </h3>
   </div>
 
-  <div id="collapseOne" [ngClass]="isOpen ? 'collapse show' : 'collapse'"> <!-- .show needs to toggle on / off onClick -->
+  <div id="collapseOne" [ngClass]="isOpen ? 'collapse show' : 'collapse'">
     <div class="card-body">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"><span class="h4">Average bg: {{ getAverage() }}mmol / L</span></li>
-        <li class="list-group-item"><span class="h4">{{ getLows() }} low(s); {{ getHighs() }} high(s)</span></li>
-        <li class="list-group-item"><span class="h4">Tend to drop low || high</span></li>
+        <li class="list-group-item">Average bg: {{ getAverage() }}mmol / L</li>
+        <li class="list-group-item">{{ getLows() }} low(s); {{ getHighs() }} high(s)</li>
       </ul>
     </div>
   </div>

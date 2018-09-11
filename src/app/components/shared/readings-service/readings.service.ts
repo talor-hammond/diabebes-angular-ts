@@ -7,7 +7,7 @@ import { Reading } from '../reading.model'
 export class ReadingsService {
     readingsUpdated = new EventEmitter<Reading[]>() // allows us to output an array of Reading objects
 
-    private readings: Reading[] = [ // template data for now
+    private readings: Reading[] = [ // template data for now; look to learn firebase as a back-end
         {
             bg: 6.4,
             time: '9:00AM',
@@ -19,6 +19,12 @@ export class ReadingsService {
             time: '12:30PM',
             insulin: 2,
             note: '4 units / 30g could be too low'
+        },
+        {
+            bg: 7.2,
+            time: '3:30PM',
+            insulin: 2,
+            note: '10g of carb'
         }
     ]
 

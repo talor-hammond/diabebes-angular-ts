@@ -17,8 +17,7 @@ const AppRoutes: Routes = [
         { path: 'readings', component: ReadingsComponent },
         { path: 'readings/:index', component: FullReadingComponent }
     ] },
-    { path: 'about', component: AboutComponent },
-    { path: 'readings/:index', component: FullReadingComponent }
+    { path: 'about', component: AboutComponent }
 ]
 
 @NgModule({
