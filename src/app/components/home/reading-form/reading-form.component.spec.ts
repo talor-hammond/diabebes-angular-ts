@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { FormsModule } from '@angular/forms';
+
 import { ReadingFormComponent } from './reading-form.component';
 
 describe('ReadingFormComponent', () => {
@@ -8,7 +10,10 @@ describe('ReadingFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReadingFormComponent ]
+      declarations: [ ReadingFormComponent ],
+      imports: [
+        FormsModule
+      ]
     })
     .compileComponents();
   }));
