@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { FullReadingComponent } from './full-reading.component';
 
@@ -8,7 +9,8 @@ describe('FullReadingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FullReadingComponent ]
+      declarations: [ FullReadingComponent ],
+      imports: [ RouterTestingModule ]
     })
     .compileComponents();
   }));
