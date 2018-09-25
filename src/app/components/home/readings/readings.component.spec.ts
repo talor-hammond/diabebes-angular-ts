@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { RouterModule } from '@angular/router';
+
+import { ReadingFormComponent } from '../reading-form/reading-form.component'
 import { ReadingsComponent } from './readings.component';
 
 describe('ReadingsComponent', () => {
@@ -8,7 +11,13 @@ describe('ReadingsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReadingsComponent ]
+      declarations: [ 
+        ReadingsComponent,
+        ReadingFormComponent
+      ],
+      imports: [
+        RouterModule
+      ]
     })
     .compileComponents();
   }));
