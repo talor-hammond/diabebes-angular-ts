@@ -7,25 +7,25 @@
   <div class="row">
     <div class="col-sm-4">
       <label for="bg">Bg, mmol / L</label>
-      <input type="text" name="bg" class="form-control" ngModel> 
+      <input id="bg" type="text" name="bg" class="form-control" ngModel> 
       <!-- 'ngModel': directive made available by the formsModule -- tells ng that this input should be part of the JavaScript object representation of this form -->
     </div>
     <div class="col-sm-4">
       <label for="time">Time</label>
       <div class="input-group bootstrap-timepicker timepicker">
-        <input type="text" name="time" class="form-control" placeholder="7:30AM, 5:00PM, etc." ngModel>
+        <input id="time" type="text" name="time" class="form-control" placeholder="7:30AM, 5:00PM, etc." ngModel>
         <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
       </div>
     </div>
     <div class="col-sm-4">
       <label for="insulin">Insulin (units)</label>
-      <input type="text" name="insulin" class="form-control" ngModel>
+      <input id="insulin" type="text" name="insulin" class="form-control" ngModel>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12">
       <label for="note">Notes</label>
-      <input type="text" name="note" class="form-control" ngModel>
+      <input id="note" type="text" name="note" class="form-control" ngModel>
     </div>
   </div>
   <br>
