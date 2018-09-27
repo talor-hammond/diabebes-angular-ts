@@ -1,12 +1,13 @@
 import { 
   Component, 
   OnInit,
-} from '@angular/core'
+} from '@angular/core';
 
-import { NgForm } from '@angular/forms'
+import { NgForm } from '@angular/forms';
 
 // Services:
-import { ReadingsService } from '../../shared/readings-service/readings.service'
+import { ReadingsService } from '../../shared/readings-service/readings.service';
+import { ServerService } from '../../shared/server.service';
 
 import { Reading } from '../../shared/reading.model'
 
@@ -15,22 +16,21 @@ import { Reading } from '../../shared/reading.model'
   templateUrl: './reading-form.component.html',
   styleUrls: ['./reading-form.component.css']
 })
-export class ReadingFormComponent implements OnInit {
-  private readingsService: ReadingsService
+export class ReadingFormComponent {
+  private readingsService: ReadingsService;
+  private serverService: ServerService;
 
-  constructor(readingsService: ReadingsService) { 
-    this.readingsService = readingsService
-  }
-
-  ngOnInit() {
+  constructor(readingsService: ReadingsService, serverService: ServerService) { 
+    this.readingsService = readingsService;
+    this.serverService = serverService;
   }
 
   addReading(form: NgForm) {
-    const { bg, time, insulin, note } = form.value
+    const { bg, time, insulin, note } = form.value;
 
-    const newReading = new Reading(Number(bg), time, insulin, note)
+    const newReading = new Reading(Number(bg), time, insulin, note);
 
-    this.readingsService.onReadingAdded(newReading) // calling the method within the readings service; much cleaner than the previous @Output() + new EE
+    this.readingsService.onReadingAdded(newReading); // calling the method within the readings service; much cleaner than the previous @Output() + new EE
   }
 
 }
