@@ -6,6 +6,8 @@ import { Reading } from '../reading.model';
 
 @Injectable({ providedIn: 'root' }) // configuring our service to 'wrap' / or provide to the entire app
 export class ReadingsService {
+    url: string = 'https://diabebes-b0f83.firebaseio.com/readings.json' // Use fbase db as a REST endpoint w *.json
+
     constructor(private http: Http) {};
 
     readingsUpdated = new EventEmitter<Reading[]>(); // allows us to output an array of Reading objects
@@ -36,9 +38,9 @@ export class ReadingsService {
     }
 
     onReadingAdded(reading: Reading) {
-        // this.readings.push(reading);
+        return this.http.post(this.url, reading) // 'An observable is kept alive until it completes'
 
-        this.readingsUpdated.emit(this.readings.slice()); // outputting the new data as an event; lets components w the service subscribe to changes
+        // this.readingsUpdated.emit(this.readings.slice()); // outputting the new data as an event; lets components w the service subscribe to changes
     }
 
     getReadingByIndex(index: number) {

@@ -21,7 +21,7 @@ import { EditReadingComponent } from './components/home/readings/edit-reading/ed
 // Directives
 
 // Services
-import { ServerService } from './components/shared/server.service';
+
 
 @NgModule({
   declarations: [
@@ -46,8 +46,7 @@ import { ServerService } from './components/shared/server.service';
     {
       provide: APP_BASE_HREF, 
       useValue: '/'
-    },
-    ServerService
+    }
   ],
   bootstrap: [AppComponent]
 })
