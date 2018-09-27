@@ -26,10 +26,8 @@ export class ReadingFormComponent {
     const newReading = new Reading(Number(bg), time, insulin, note);
 
     this.readingsService.onReadingAdded(newReading)
-      .subscribe(
-        response => console.log(response),
-        err => console.log(err)
-      );
+      .subscribe(res => console.log(res), err => console.log(err))
+    ;
     
     // calling the method within the readings service; much cleaner than the previous @Output() + new EE
   }

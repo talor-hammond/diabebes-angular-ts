@@ -1,12 +1,13 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
+import { map } from 'rxjs/operators';
 
 // Model(s)
 import { Reading } from '../reading.model';
 
 @Injectable({ providedIn: 'root' }) // configuring our service to 'wrap' / or provide to the entire app
 export class ReadingsService {
-    url: string = 'https://diabebes-b0f83.firebaseio.com/readings.json' // Use fbase db as a REST endpoint w *.json
+    url: string = 'https://diabebes-b0f83.firebaseio.com/readings.json'; // Use fbase db as a REST endpoint w *.json
 
     constructor(private http: Http) {};
 
@@ -34,11 +35,24 @@ export class ReadingsService {
     ]
 
     getReadings() {
-        return this.readings.slice(); // simply returns a copy of the array; i.e. not the original value
+        return this.readings.slice();
+    }
+
+    getReadingsFromServer() {
+        return this.http.get(this.url)
+            .pipe( // ...takes an argument which is an operator that can be applied to your observable
+                map((res: Response) => {
+                    const readings = res.json();
+                    console.log(readings);
+                    return readings;
+                })
+            );
+
+        // return this.readings.slice(); // simply returns a copy of the array; i.e. not the original value
     }
 
     onReadingAdded(reading: Reading) {
-        return this.http.post(this.url, reading) // 'An observable is kept alive until it completes'
+        return this.http.post(this.url, reading); // 'An observable is kept alive until it completes'
 
         // this.readingsUpdated.emit(this.readings.slice()); // outputting the new data as an event; lets components w the service subscribe to changes
     }
