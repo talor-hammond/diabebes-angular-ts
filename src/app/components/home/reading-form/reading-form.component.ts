@@ -1,15 +1,12 @@
-import { 
-  Component, 
-  OnInit,
-} from '@angular/core';
+import { Component } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
 
 // Services:
 import { ReadingsService } from '../../shared/readings-service/readings.service';
-import { ServerService } from '../../shared/server.service';
 
-import { Reading } from '../../shared/reading.model'
+// Data models:
+import { Reading } from '../../shared/reading.model';
 
 @Component({
   selector: 'app-reading-form',
@@ -18,11 +15,9 @@ import { Reading } from '../../shared/reading.model'
 })
 export class ReadingFormComponent {
   private readingsService: ReadingsService;
-  private serverService: ServerService;
 
-  constructor(readingsService: ReadingsService, serverService: ServerService) { 
+  constructor(readingsService: ReadingsService) { 
     this.readingsService = readingsService;
-    this.serverService = serverService;
   }
 
   addReading(form: NgForm) {

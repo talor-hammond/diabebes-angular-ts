@@ -1,11 +1,14 @@
-import { Injectable, EventEmitter } from '@angular/core'
+import { Injectable, EventEmitter } from '@angular/core';
+import { Http } from '@angular/http';
 
 // Model(s)
-import { Reading } from '../reading.model'
+import { Reading } from '../reading.model';
 
 @Injectable({ providedIn: 'root' }) // configuring our service to 'wrap' / or provide to the entire app
 export class ReadingsService {
-    readingsUpdated = new EventEmitter<Reading[]>() // allows us to output an array of Reading objects
+    constructor(private http: Http) {};
+
+    readingsUpdated = new EventEmitter<Reading[]>(); // allows us to output an array of Reading objects
 
     private readings: Reading[] = [ // template data for now; look to learn firebase as a back-end
         {
@@ -29,22 +32,22 @@ export class ReadingsService {
     ]
 
     getReadings() {
-        return this.readings.slice() // simply returns a copy of the array; i.e. not the original value
+        return this.readings.slice(); // simply returns a copy of the array; i.e. not the original value
     }
 
     onReadingAdded(reading: Reading) {
-        this.readings.push(reading)
+        // this.readings.push(reading);
 
-        this.readingsUpdated.emit(this.readings.slice()) // outputting the new data as an event; lets components w the service subscribe to changes
+        this.readingsUpdated.emit(this.readings.slice()); // outputting the new data as an event; lets components w the service subscribe to changes
     }
 
     getReadingByIndex(index: number) {
-        return this.readings[index]
+        return this.readings[index];
     }
 
     editNoteByIndex(note: string, index: number) {
-        this.readings[index].note = note
+        this.readings[index].note = note;
         
-        this.readingsUpdated.emit(this.readings.slice())
+        this.readingsUpdated.emit(this.readings.slice());
     }
 }
