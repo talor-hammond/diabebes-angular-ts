@@ -1,9 +1,10 @@
+// Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { APP_BASE_HREF } from '@angular/common';
-
 import { AppRoutingModule } from './routing/app-routing.module'
+import { HttpModule } from '@angular/http';
+import { APP_BASE_HREF } from '@angular/common';
 
 // Components
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { EditReadingComponent } from './components/home/readings/edit-reading/ed
 
 // Services
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,9 +39,15 @@ import { EditReadingComponent } from './components/home/readings/edit-reading/ed
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/'}],
+  providers: [
+    {
+      provide: APP_BASE_HREF, 
+      useValue: '/'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
