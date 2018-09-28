@@ -1,6 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 // Model(s)
 import { Reading } from '../reading.model';
@@ -34,17 +35,24 @@ export class ReadingsService {
         }
     ]
 
-    getReadings() {
-        return this.readings.slice();
-    }
+    // getReadings() {
+    //     return this.readings.slice();
+    // }
 
-    getReadingsFromServer() {
+    getReadings() {
         return this.http.get(this.url)
             .pipe( // ...takes an argument which is an operator that can be applied to your observable
                 map((res: Response) => {
-                    const readings = res.json();
-                    console.log(readings);
+                    const data = res.json();
+
+                    // transforms the json into an array (w nested array)... 
+                    // ...returns a mapped array w a newly defined obj with associated 'id' (reading[0])
+                    const readings = Object.entries(data).map(reading => Object.assign(reading[1], { id: reading[0] }));
+
                     return readings;
+                }),
+                catchError(err => {
+                    return throwError(err)
                 })
             );
 

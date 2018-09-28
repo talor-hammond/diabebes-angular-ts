@@ -14,7 +14,7 @@ import { EditModalService, Modal } from '../../shared/edit-modal-service/edit-mo
 })
 export class ReadingsComponent implements OnInit {
   name: string = 'Talor';
-  readings: Reading[];
+  readings: any[];
   activeModal: Modal = {
     index: null,
     isActive: false
@@ -26,13 +26,18 @@ export class ReadingsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.readings = this.readingsService.getReadings();
+    this.readingsService.getReadings()
+      .subscribe(readings => {
+        this.readings = readings
+      },
+        (err) => console.log(err)
+      );
 
-    this.readingsService.getReadingsFromServer()
-      .subscribe(
-          (readings) => console.log(readings),
-          (err) => console.log(err)
-        )
+    // this.readingsService.getReadingsFromServer()
+    //   .subscribe(
+    //       (readings) => console.log(readings),
+    //       (err) => console.log(err)
+    //     )
 
     this.readingsService.readingsUpdated
       .subscribe( // listen to the readingsUpdated event...
