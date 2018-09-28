@@ -23,5 +23,6 @@ function updateReadingById(id, reading, testDb) {
 
 module.exports = {
     getReadings,
-    addReading
-}
+    addReading,
+    updateReadingById
+};
